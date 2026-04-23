@@ -1,0 +1,210 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0a0a0a;
+    color: #eaeaea;
+    overflow-x: hidden;
+}
+
+/* FADE IN DA PÁGINA */
+.fade-in {
+    animation: fadePage 1s ease;
+}
+
+@keyframes fadePage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* LAYOUT */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,10,10,0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1a1a1a;
+}
+
+nav a {
+    margin-left: 20px;
+    color: #777;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    padding-top: 140px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.hero span {
+    color: #666;
+    font-weight: 300;
+}
+
+.descricao {
+    margin-top: 20px;
+    max-width: 500px;
+    color: #999;
+}
+
+/* BOTÕES */
+.actions {
+    margin-top: 30px;
+}
+
+.actions a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 3px;
+    transition: 0.3s;
+}
+
+.actions a:hover {
+    border-color: #fff;
+}
+
+/* SEÇÕES */
+section {
+    margin-top: 100px;
+}
+
+/* PROJETOS */
+.projetos {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 40px;
+}
+
+.projeto {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 1px solid #1a1a1a;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.projeto:hover {
+    transform: translateX(10px);
+}
+
+.projeto h3 {
+    font-weight: 500;
+}
+
+.projeto p {
+    color: #888;
+    margin-top: 5px;
+}
+
+/* CONTATO */
+.contato p {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* ANIMAÇÕES (SCROLL REVEAL) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* DELAYS */
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: left;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* REMOVE CURSOR PADRÃO */
+body {
+    cursor: none;
+}
+
+/* CURSOR PRINCIPAL (ponto) */
+.cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+/* CURSOR FOLLOWER (círculo suave) */
+.cursor-follower {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+}
+
+/* HOVER EM LINKS */
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower {
+    transform: scale(1.8);
+    border-color: #fff;
+}
